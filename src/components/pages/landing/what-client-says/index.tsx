@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React from "react"; // No ref needed anymore
 import ReviewsCard from "./ReviewsCard";
 
 // Swiper imports
@@ -21,7 +21,7 @@ const WhatClientSays = () => {
       name: "Vaneer Randhawa",
       desination: "Director, Nova Institute of Technology",
       review:
-        "VirtueNetz is able to streamline the platform, much to the client's and customers' delight. The team communicates consistently, and internal stakeholders are particularly impressed with the vendor's flexibility, agility, and quality of deliverables.",
+        "VirtueNetz is able to streamline the platform, much to the client's and customers' delight. The team communicates consistently, and internal stakeholders are particularly impressed with the vendor's flexibility, agility, and quality of deliverables. irtueNetz is able to streamline the platform, much to the client's and customers' delight. The team communicates consistently, and internal stakeholders are particularly impressed with the vendor's flexibility, agility, and quality of deliverables.",
       rating: 4,
     },
     {
@@ -40,6 +40,14 @@ const WhatClientSays = () => {
         "Professional and fast service. We are impressed with their attention to detail.",
       rating: 3,
     },
+    {
+      logoSrc: "/images/reviewer.png",
+      name: "Mike Ross",
+      desination: "Lead Developer, Innovate Inc.",
+      review:
+        "The deliverables were high-quality and the team was always responsive to our needs.",
+      rating: 5,
+    },
   ];
 
   return (
@@ -56,47 +64,63 @@ const WhatClientSays = () => {
       </div>
 
       {/* Swiper Slider */}
-      <div className="relative">
+      <div className="relative max-w-[1800px] mx-auto">
         <Swiper
           modules={[Navigation, Pagination]}
           slidesPerView={1}
           spaceBetween={0}
           loop
-          pagination={{ clickable: true }}
+          pagination={{
+            // KEY CHANGE: Point to the class selector directly
+            el: ".swiper-pagination",
+            clickable: true,
+          }}
           navigation={{
             nextEl: ".custom-next",
             prevEl: ".custom-prev",
           }}
-          className="mySwiper pb-[80px]" // padding bottom for buttons + dots
+          // The complex onSwiper logic is no longer needed
+          className="mySwiper pb-[100px]"
         >
-          {reviewData.map((review, index) => (
+          {[...reviewData, ...reviewData].map((review, index) => (
             <SwiperSlide key={index}>
               <ReviewsCard {...review} />
             </SwiperSlide>
           ))}
         </Swiper>
 
-        {/* Custom Buttons + Dots */}
-        <div className="absolute left-1/2 bottom-0 z-10 flex -translate-x-1/2 items-center gap-5">
-          {/* Buttons */}
-          <div className="flex items-center gap-3">
-            <div className="custom-prev cursor-pointer">
-              <BackArrowIcon className="w-8 h-8 text-[#453D3D]" />
-            </div>
-            <div className="custom-next cursor-pointer">
-              <NextArrowIcon className="w-8 h-8 text-[#453D3D]" />
-            </div>
+        {/* Custom Controls: Buttons + Dots */}
+        <div className="absolute bottom-[100px] left-1/2 z-10 flex w-auto -translate-x-1/2 items-center justify-center gap-4 max-2xl:bottom-16 max-xl:bottom-5">
+          {/* Prev Button */}
+          <div className="custom-prev cursor-pointer">
+            <BackArrowIcon className="h-8 w-8 text-[#453D3D]" />
           </div>
 
-          {/* Pagination Dots will auto-appear here from Swiper */}
+          {/* KEY CHANGE: Add the swiper-pagination class directly */}
+          <div className="swiper-pagination"></div>
+
+          {/* Next Button */}
+          <div className="custom-next cursor-pointer">
+            <NextArrowIcon className="h-8 w-8 text-[#453D3D]" />
+          </div>
         </div>
 
-        {/* Custom Dot Styling */}
+        {/* Dot Styling */}
         <style jsx global>{`
+          .swiper {
+            border-radius: 40px;
+          }
+          .swiper-slide {
+            width: 100% !important;
+          }
+          /* Target the class to override Swiper's default absolute positioning */
           .swiper-pagination {
             position: relative !important;
-            bottom: 0px !important;
-            margin-left: 15px;
+            bottom: auto !important;
+            left: auto !important;
+            width: auto !important;
+            display: flex;
+            align-items: center;
           }
 
           .swiper-pagination-bullet {
@@ -110,6 +134,13 @@ const WhatClientSays = () => {
           .swiper-pagination-bullet-active {
             background: #453d3d;
           }
+           @media (max-width: 640px) {
+  .swiper {
+    border-radius: 12px;
+  }
+}
+
+            }
         `}</style>
       </div>
     </section>
