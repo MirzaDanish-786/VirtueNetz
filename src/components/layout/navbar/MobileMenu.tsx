@@ -5,7 +5,11 @@ import { useState, useEffect } from "react";
 import HamburgerIcon from "../../icons/HamburgerIcon";
 import DropDownIcon from "../../icons/DropDownIcon";
 
-const MobileMenu = () => {
+interface Props {
+  isPrimary: boolean;
+}
+
+const MobileMenu = ({ isPrimary }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
@@ -44,7 +48,8 @@ const MobileMenu = () => {
             <span className="absolute top-1/2 left-0 w-full h-[2px] bg-white -rotate-45"></span>
           </div>
         ) : (
-          <HamburgerIcon className="stroke-white w-7 h-7" />
+          <HamburgerIcon className={`w-7 h-7 ${isPrimary ? "text-white" : "text-black"}`} />
+
         )}
       </button>
 
@@ -80,13 +85,23 @@ const MobileMenu = () => {
               className="flex justify-between items-center w-full text-lg hover:text-orange-500 transition"
             >
               <span>About Us</span>
-              <DropDownIcon className={`w-[10px] transition-transform ${openDropdown === "about" ? "rotate-180" : ""}`} />
+              <DropDownIcon
+                className={`w-[10px] transition-transform ${
+                  openDropdown === "about" ? "rotate-180" : ""
+                }`}
+              />
             </button>
             {openDropdown === "about" && (
               <div className="mt-2 ml-3 flex flex-col gap-2 text-base text-gray-300">
-                <Link href="/about/company" onClick={() => setIsOpen(false)}>Company</Link>
-                <Link href="/about/team" onClick={() => setIsOpen(false)}>Team</Link>
-                <Link href="/about/culture" onClick={() => setIsOpen(false)}>Culture</Link>
+                <Link href="/about/company" onClick={() => setIsOpen(false)}>
+                  Company
+                </Link>
+                <Link href="/about/team" onClick={() => setIsOpen(false)}>
+                  Team
+                </Link>
+                <Link href="/about/culture" onClick={() => setIsOpen(false)}>
+                  Culture
+                </Link>
               </div>
             )}
           </div>
@@ -98,13 +113,29 @@ const MobileMenu = () => {
               className="flex justify-between items-center w-full text-lg hover:text-orange-500 transition"
             >
               <span>Services</span>
-              <DropDownIcon className={`w-[10px] transition-transform ${openDropdown === "services" ? "rotate-180" : ""}`} />
+              <DropDownIcon
+                className={`w-[10px] transition-transform ${
+                  openDropdown === "services" ? "rotate-180" : ""
+                }`}
+              />
             </button>
             {openDropdown === "services" && (
               <div className="mt-2 ml-3 flex flex-col gap-2 text-base text-gray-300">
-                <Link href="/services/web-development" onClick={() => setIsOpen(false)}>Web Development</Link>
-                <Link href="/services/mobile-apps" onClick={() => setIsOpen(false)}>Mobile Apps</Link>
-                <Link href="/services/ui-ux" onClick={() => setIsOpen(false)}>UI/UX Design</Link>
+                <Link
+                  href="/services/web-development"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Web Development
+                </Link>
+                <Link
+                  href="/services/mobile-apps"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Mobile Apps
+                </Link>
+                <Link href="/services/ui-ux" onClick={() => setIsOpen(false)}>
+                  UI/UX Design
+                </Link>
               </div>
             )}
           </div>
@@ -116,13 +147,23 @@ const MobileMenu = () => {
               className="flex justify-between items-center w-full text-lg hover:text-orange-500 transition"
             >
               <span>Hire a Developer</span>
-              <DropDownIcon className={`w-[10px] transition-transform ${openDropdown === "hire" ? "rotate-180" : ""}`} />
+              <DropDownIcon
+                className={`w-[10px] transition-transform ${
+                  openDropdown === "hire" ? "rotate-180" : ""
+                }`}
+              />
             </button>
             {openDropdown === "hire" && (
               <div className="mt-2 ml-3 flex flex-col gap-2 text-base text-gray-300">
-                <Link href="/hire/frontend" onClick={() => setIsOpen(false)}>Frontend Developer</Link>
-                <Link href="/hire/backend" onClick={() => setIsOpen(false)}>Backend Developer</Link>
-                <Link href="/hire/fullstack" onClick={() => setIsOpen(false)}>Full Stack Developer</Link>
+                <Link href="/hire/frontend" onClick={() => setIsOpen(false)}>
+                  Frontend Developer
+                </Link>
+                <Link href="/hire/backend" onClick={() => setIsOpen(false)}>
+                  Backend Developer
+                </Link>
+                <Link href="/hire/fullstack" onClick={() => setIsOpen(false)}>
+                  Full Stack Developer
+                </Link>
               </div>
             )}
           </div>

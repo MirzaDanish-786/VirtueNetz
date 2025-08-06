@@ -13,28 +13,28 @@ const staffData = [
     imageSrc: "/images/staff-1.png",
   },
   {
-    name: "Sana Khalid",
+    name: "Shoaib Latif",
     desination: "Chief Operating Officer",
     imageSrc: "/images/staff-2.png",
   },
   {
-    name: "Ali Raza",
-    desination: "Lead Developer",
+    name: "Muhammad Adil",
+    desination: "Chief Technical Officer",
     imageSrc: "/images/staff-3.png",
   },
   {
-    name: "Fatima Rizwan",
-    desination: "Product Manager",
+    name: "Laraib Maryam",
+    desination: "Chief Marketing Officer",
     imageSrc: "/images/staff-4.png",
   },
   {
-    name: "Zain Qureshi",
-    desination: "UI/UX Designer",
+    name: "Muhammad Umer",
+    desination: "Chief Design Officer",
     imageSrc: "/images/staff-5.png",
   },
   {
-    name: "Nida Usman",
-    desination: "Marketing Head",
+    name: "Usman Saeed",
+    desination: "Senior React Native Developer",
     imageSrc: "/images/staff-6.jpg",
   },
 ];

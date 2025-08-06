@@ -15,7 +15,7 @@ import Footer from "@/components/layout/footer";
 const LandingPage = () => {
   return (
     <>
-      <Navbar />
+      <Navbar isPrimary={true} />
       <main>
         <HeroSection />
         <CompanyLogoSlider />

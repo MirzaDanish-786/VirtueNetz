@@ -1,21 +1,23 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../../reusable/Button";
 import DropDownIcon from "../../icons/DropDownIcon";
 import MobileMenu from "./MobileMenu";
 
-const Navbar = () => {
+interface Props {
+  isPrimary: boolean;
+}
+
+const Navbar = ({isPrimary}:Props) => {
   return (
-    <header className="absolute top-0 left-0 w-full z-100 bg-transparent text-white">
+    <header className={`${isPrimary ? 'text-white' : 'text-black border-b border-b-[#DEE9EE]'} absolute top-0 left-0 w-full z-100 bg-transparent`}>
       <nav className="py-[34px] max-lg:py-6">
         <div className="max-w-[1600px] mx-auto px-7 flex items-center justify-between max-lg:px-5 max-md:px-3">
           {/* Logo Section */}
           <div className="relative w-[240px] flex flex-shrink-0 h-[55px] max-2xl:w-[200px] max-2xl:h-[40px] max-sm:w-[170px] max-sm:h-[35px]">
             <Link href="/" className="block w-full h-full">
               <Image
-                src="/images/logo.png"
+                src={`${isPrimary ? '/images/primary-logo.png' : '/images/secondary-logo.png'}`}
                 alt="VirtueNetz Logo"
                 fill
                 className="object-contain"
@@ -39,9 +41,9 @@ const Navbar = () => {
             <div className="relative group">
               <button className="flex cursor-pointer items-baseline gap-1 text-base hover:text-orange-500 transition">
                 About Us
-                <DropDownIcon className="w-[10px]" />
+                <DropDownIcon className={`w-[10px]`} />
               </button>
-              <ul className="absolute left-0 mt-2 w-48 bg-white text-black rounded shadow-md opacity-0 group-hover:opacity-100 group-hover:visible invisible transition duration-200 z-50">
+              <ul className="absolute overflow-hidden left-0 mt-2 w-48 bg-white text-black rounded shadow-md opacity-0 group-hover:opacity-100 group-hover:visible invisible transition duration-200 z-50">
                 <li>
                   <Link href="/about/company" className="block px-4 py-2 hover:bg-gray-100">
                     Company
@@ -66,7 +68,7 @@ const Navbar = () => {
                 Services
                 <DropDownIcon className="w-[10px]" />
               </button>
-              <ul className="absolute left-0 mt-2 w-56 bg-white text-black rounded shadow-md opacity-0 group-hover:opacity-100 group-hover:visible invisible transition duration-200 z-50">
+              <ul className="absolute left-0 mt-2 overflow-hidden w-56 bg-white text-black rounded shadow-md opacity-0 group-hover:opacity-100 group-hover:visible invisible transition duration-200 z-50">
                 <li>
                   <Link href="/services/web-development" className="block px-4 py-2 hover:bg-gray-100">
                     Web Development
@@ -91,7 +93,7 @@ const Navbar = () => {
                 Hire a Developer
                 <DropDownIcon className="w-[10px]" />
               </button>
-              <ul className="absolute left-0 mt-2 w-60 bg-white text-black rounded shadow-md opacity-0 group-hover:opacity-100 group-hover:visible invisible transition duration-200 z-50">
+              <ul className="absolute overflow-hidden left-0 mt-2 w-60 bg-white text-black rounded shadow-md opacity-0 group-hover:opacity-100 group-hover:visible invisible transition duration-200 z-50">
                 <li>
                   <Link href="/hire/frontend" className="block px-4 py-2 hover:bg-gray-100">
                     Frontend Developer
@@ -141,7 +143,7 @@ const Navbar = () => {
 
           {/* Hamburger Icon */}
           <div className="hidden max-xl:block">
-            <MobileMenu />
+            <MobileMenu isPrimary={isPrimary}/>
           </div>
         </div>
       </nav>

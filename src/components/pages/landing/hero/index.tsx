@@ -1,13 +1,12 @@
-"use client";
 import React from "react";
-// import Goto from "@/assets/icons/Goto.svg";
 import CopyRight from "./CopyRight";
 import Image from "next/image";
 import GotoIcon from "@/components/icons/GotoIcon";
+import ScrollToSection from "./ScrollToSection";
 
 const HeroSection = () => {
   return (
-    <section className="relative w-screen font-poppins  pt-[162px] text-white bg-cover bg-center bg-[url('/images/hero-bg.png')]">
+    <section className="relative w-screen font-poppins  pt-[162px] text-white bg-cover bg-center bg-[url('/images/hero-bg.png')] max-xl:pt-[140px] max-lg:pt-[100px] max-md:pt-20">
       <CopyRight />
 
       {/* Overlay Layer */}
@@ -44,10 +43,10 @@ const HeroSection = () => {
               </p>
 
               {/*  Rounded Button */}
-              <div className="absolute -bottom-20 -right-[250px] cursor-pointer max-xl:-right-[200px] max-lg:right-15 max-md:right-10 max-sm:-right-[40px] max-sm:-bottom-[120px]">
-                <div className="flex flex-col justify-center items-center gap-[10px] bg-[#F37021] p-[14.5px] w-[170px] h-[170px] rounded-full max-xl:w-[150px] max-xl:h-[150px] max-lg:w-[120px] max-lg:h-[120px] ">
-                  <GotoIcon className="stroke-black w-4" />
-                  <div className="text-black font-ibmplexmono font-medium text-base text-center leading-tight max-lg:text-[12px]">
+              <div className="absolute -bottom-20 -right-[250px] cursor-pointer max-xl:-right-[200px] max-lg:right-15  max-md:-right-[40px] max-md:-bottom-[120px] max-sm:-right-[15px] max-sm:-bottom-[90px]">
+                <div className="flex flex-col justify-center items-center gap-[10px] bg-[#F37021] p-[14.5px] w-[170px] h-[170px] rounded-full max-xl:w-[150px] max-xl:h-[150px] max-lg:w-[120px] max-lg:h-[120px] max-sm:w-[90px] max-sm:h-[90px] max-sm:gap-0.5 max-sm:p-2">
+                  <GotoIcon className="stroke-black w-4 max-sm:w-2" />
+                  <div className="text-black font-ibmplexmono font-medium text-base text-center leading-tight max-lg:text-[12px] max-sm:text-[9px]">
                     Let’s Discuss your project
                   </div>
                 </div>
@@ -57,20 +56,7 @@ const HeroSection = () => {
         </div>
 
         {/* Scroll Button */}
-        <div className="flex w-fit relative -left-5 pb-[50px] items-center gap-[10px] cursor-pointer max-xl:pb-10 max-md:left-0 max-md:gap-1.5 max-md:pb-5">
-          <div className="relative w-10 h-10 max-md:w-8 max-md:h-8">
-            <Image
-              src="/images/scroll-img.png"
-              alt="scroll-img"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-          <div className="font-ibmplexmono text-lg font-normal max-md:text-base">
-            Scroll
-          </div>
-        </div>
+        <ScrollToSection/>
       </div>
     </section>
   );

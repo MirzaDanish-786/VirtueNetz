@@ -113,7 +113,7 @@ const TechnologyStack = () => {
                     <li
                       className={`${
                         index === activeIndex && "text-[#E84D00]"
-                      } flex items-center w-fit gap-4 justify-between`}
+                      } flex items-center w-fit gap-4 justify-between cursor-pointer transition-all duration-300 hover:text-[#E84D00]`}
                       onClick={() => {
                         handleActiveIndex(index);
                       }}

@@ -21,7 +21,7 @@ const repeatedLogos = [...logos, ...logos];
 
 const CompanyLogoSlider = () => {
   return (
-    <div className="w-full py-10 bg-white overflow-hidden border-b border-[#989CAA] max-xl:py-5">
+    <div id="slider" className="w-full py-10 bg-white overflow-hidden border-b border-[#989CAA] max-xl:py-5">
       <div className="relative flex items-center">
         <div className="animate-slide flex whitespace-nowrap">
           {repeatedLogos.map((logo, index) => (
