@@ -21,7 +21,7 @@ const ServicesSection = () => {
 
   return (
     <section className="w-full px-20 max-lg:px-10 max-sm:px-5">
-      <div className="my-[140px] max-w-[1580px] mx-auto flex justify-center gap-14 max-xl:gap-4 max-xl:my-20 max-md:flex-col max-md:gap-10 max-md:my-20">
+      <div className="my-[140px] max-w-[1580px] mx-auto flex justify-center gap-14 max-xl:gap-4 max-xl:my-20 max-md:flex-col max-md:gap-10 max-md:my-10 max-sm:mt-5 max-sm:gap-2">
         {/* Left */}
         <div className="relative w-[40%] h-[490px] max-2xl:w-1/2 max-xl:h-[350px] max-md:w-full">
           <Image

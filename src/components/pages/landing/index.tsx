@@ -9,6 +9,8 @@ import OurStaff from "./our-staff";
 import RangeOfSolution from "./range-of-solutions";
 import WhatClientSays from "./what-client-says";
 import TechnologyStack from "./technology-stack";
+import CTASection from "./CTA-section";
+import Footer from "@/components/layout/footer";
 
 const LandingPage = () => {
   return (
@@ -24,7 +26,9 @@ const LandingPage = () => {
         <RangeOfSolution />
         <WhatClientSays />
         <TechnologyStack/>
+        <CTASection/>
       </main>
+      <Footer/>
     </>
   );
 };

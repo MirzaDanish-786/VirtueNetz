@@ -52,7 +52,7 @@ const WhatClientSays = () => {
 
   return (
     <section className="w-full px-20 max-lg:px-10 max-sm:px-5">
-      <div className="mx-auto mt-[120px] mb-20 max-w-[1580px] max-lg:my-20">
+      <div className="mx-auto mt-[120px] mb-20 max-w-[1580px] max-lg:my-20 max-md:my-10 max-sm:mb-5">
         {/* Heading */}
         <div className="flex flex-col gap-[10px] border-b border-b-[#453D3D] pb-[35px] max-xl:pb-7 max-lg:pb-5 max-md:pb-2">
           <h1 className="heading uppercase">What our clients says</h1>

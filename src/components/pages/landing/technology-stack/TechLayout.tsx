@@ -37,12 +37,12 @@ const TechLayout = ({ techCategory, technologies }: Props) => {
 };
 
   return (
-    <div className="flex flex-col gap-[60px]">
-      <div className="flex flex-col gap-10">
-        <div className="text-[42px] font-medium leading-none">{getHeading(techCategory)}</div>
+    <div className="flex flex-col gap-[60px] max-2xl:gap-10">
+      <div className="flex flex-col gap-10 max-lg:gap-5">
+        <div className="text-[42px] font-medium leading-none max-lg:text-4xl max-sm:text-3xl">{getHeading(techCategory)}</div>
 
         {/* Grid */}
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 gap-6 max-2xl:gap-5 max-xl:gap-4 max-md:gap-2 max-[980px]:grid-cols-2">
           {techCategory === 'web-platform' && technologies?.frontend?.map((tech) => (
             <TechCard
               key={tech.name}
@@ -61,13 +61,13 @@ const TechLayout = ({ techCategory, technologies }: Props) => {
         </div>
       </div>
       {techCategory === "web-platform" && (
-        <div className="flex flex-col gap-10">
-          <div className="text-[42px] font-medium leading-none">{`${
+        <div className="flex flex-col gap-10 max-lg:gap-5">
+          <div className="text-[42px] font-medium leading-none max-lg:text-4xl max-sm:text-3xl">{`${
             techCategory === "web-platform" && "Back-End"
           }`}</div>
 
           {/* Grid */}
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-3 gap-6 max-2xl:gap-5 max-xl:gap-4 max-md:gap-2 max-[980px]:grid-cols-2">
             {technologies?.backend?.map((tech) => (
               <TechCard
                 key={tech.name}

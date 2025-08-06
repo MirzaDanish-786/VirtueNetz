@@ -103,11 +103,11 @@ const TechnologyStack = () => {
         </div>
 
         {/* Content */}
-        <div className="flex">
+        <div className="flex max-[980px]:flex-col max-[980px]:gap-10">
           {/* Left Container */}
-          <div className="w-[30%] pt-20 border-r border-r-[#453D3D]">
-            <div className="w-[80%] border">
-              <ul className="text-lg font-medium font-ibmplexmono">
+          <div className="w-[30%] pt-20 border-r border-r-[#453D3D] max-2xl:pt-16 max-[980px]:w-full max-[980px]:border-none max-[980px]:!pt-10 max-sm:!pt-5">
+            <div className="w-[80%] flex flex-shrink-0 max-2xl:w-full max-[980px]:border-none">
+              <ul className="text-lg font-medium font-ibmplexmono max-xl:text-[15px] max-[980px]:!text-lg">
                 {technologyCategories.length !== 0 &&
                   technologyCategories.map((tech, index) => (
                     <li
@@ -134,7 +134,7 @@ const TechnologyStack = () => {
           </div>
 
           {/* Right Container */}
-          <div className="w-[70%] pt-20 pl-[90px]">
+          <div className="w-[70%] pt-20 pl-[90px] max-2xl:pt-16 max-2xl:pl-10 max-lg:pl-5 max-[980px]:w-full max-[980px]:!p-0">
             <TechLayout
               techCategory={selectedTechnology}
               technologies={technologyCategories[activeIndex].technologies}
